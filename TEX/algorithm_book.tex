@@ -1,0 +1,193 @@
+\documentclass[11pt,twoside,a4paper]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+
+
+\usepackage{amsmath}
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{epigraph}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage{inconsolata} % very nice fixed-width font included with texlive-full
+\usepackage{listings}
+
+\lstset{
+basicstyle=\ttfamily, 
+columns=fullflexible, % make sure to use fixed-width font, CM typewriter is NOT fixed width
+numbers=left, 
+numberstyle=\small\ttfamily\color{Gray},
+stepnumber=1,              
+numbersep=10pt, 
+numberfirstline=true, 
+numberblanklines=true, 
+tabsize=4,
+lineskip=-1.5pt,
+extendedchars=true,
+breaklines=true,        
+keywordstyle=\color{Blue}\bfseries,
+identifierstyle=, % using emph or index keywords
+commentstyle=\sffamily\color{OliveGreen},
+stringstyle=\color{Maroon},
+showstringspaces=false,
+showtabs=false,
+upquote=false,
+texcl=true, % interpet comments as LaTeX
+numbers=none,
+frame=single
+}
+
+\lstdefinelanguage{julia}
+{
+  keywordsprefix=\@,
+  morekeywords={
+    exit,whos,edit,load,is,isa,isequal,typeof,tuple,ntuple,uid,hash,finalizer,convert,promote,
+    subtype,typemin,typemax,realmin,realmax,sizeof,eps,promote_type,method_exists,applicable,
+    invoke,dlopen,dlsym,system,error,throw,assert,new,Inf,Nan,pi,im,begin,while,for,in,return,
+    break,continue,macro,quote,let,if,elseif,else,try,catch,end,bitstype,ccall,do,using,module,
+    import,export,importall,baremodule,immutable,local,global,const,Bool,Int,Int8,Int16,Int32,
+    Int64,Uint,Uint8,Uint16,Uint32,Uint64,Float32,Float64,Complex64,Complex128,Any,Nothing,None,
+    function,type,typealias,abstract
+  },
+  sensitive=true,
+  morecomment=[l]{\#},
+  morestring=[b]',
+  morestring=[b]" 
+}
+
+
+\tcbuselibrary{theorems}
+
+\newtcbtheorem
+  []% init options
+  {definition}% name
+  {Definition}% title
+  {%
+    colback=green!5,
+    colframe=green!35!black,
+    fonttitle=\bfseries,
+  }% options
+  {def}% prefix
+  
+  \newtcbtheorem
+  []% init options
+  {theorem}% name
+  {Theorem}% title
+  {%
+    colback=blue!5,
+    colframe=blue!35!black,
+    fonttitle=\bfseries,
+  }% options
+  {thm}% prefix
+  
+  
+    \newtcbtheorem
+  []% init options
+  {example}% name
+  {Example}% title
+  {%
+    colback=Salmon!10,
+    colframe=BrickRed,
+    fonttitle=\bfseries,
+  }% options
+  {thm}% prefix
+
+\usepackage{titlesec}
+
+\makeatletter
+\renewcommand\@seccntformat[1]{\Large\color{purple} {\csname the#1\endcsname}\hspace{0.5em}}
+\makeatother
+
+
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+ \vspace*{50\p@}%
+ {\parindent \z@ \raggedright \normalfont
+  \hrule                                        % horizontal line
+  \vspace{5pt}%                                 % add vertical space
+  \ifnum \c@secnumdepth >\m@ne
+   \huge\scshape \@chapapp\space \thechapter    % Chapter number
+   \par\nobreak
+   \vskip 20\p@
+  \fi
+  \interlinepenalty\@M
+  \Huge \scshape #1\par                         % chapter title
+  \vspace{5pt}%                                 % add vertical space
+  \hrule                                        % horizontal rule
+  \nobreak
+  \vskip 40\p@
+ }%
+}
+\makeatother
+
+\usepackage{xcoffins}
+\newcommand\headerdisplay[1]{%
+   \huge
+   \vskip.5\baselineskip
+   \filcenter\MakeUppercase{#1}%
+   \vskip.0\baselineskip
+}
+\NewCoffin\mytmpa
+\NewCoffin\mytmpb
+\newcommand\placeabove[3][0pt]{%
+  \SetHorizontalCoffin\mytmpa{#2}%
+  \SetHorizontalCoffin\mytmpb{#3}%
+  \JoinCoffins*\mytmpb[hc,t]\mytmpa[hc,b](0pt,#1)%
+  \TypesetCoffin\mytmpb
+}
+ 
+\renewcommand\thepart{\arabic{part}}
+\titleclass{\part}{top} % make part like a chapter
+\titleformat{\part}[frame]
+   {\normalfont}
+   {\filcenter\placeabove[2\baselineskip]{\Large PART}{\huge\enspace\thepart\enspace}}
+   {0pt}
+   {\headerdisplay}
+\titlespacing*{\part}{0pt}{0pt}{20pt}
+
+
+
+
+\title{\Huge\textbf{Google Code Jam solved}}
+\author{Ludovico Bessi}
+
+
+\begin{document}
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\chapter*{Preface}
+asjdlasdnlksadlkasn\\
+asdnjsanld
+\mainmatter
+\part{THEORY}
+\chapter{Data structures}
+\epigraph{Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us dragons can be beaten.\par\hfill\textsc{C.K. Chesterton}}
+
+LA MIA LIBRA
+\begin{definition}{Titolo}
+Sto definendo cose
+\end{definition}
+
+\lstinputlisting[language=Julia]{/Users/ludovicobessi/Desktop/ALGORITHM_BOOK/CODE/prova.jl}
+
+\begin{theorem}{Mioteorema}
+najkdfna
+\end{theorem}
+
+\begin{example}{Example}
+ajdasdnla
+\end{example}
+
+\section{First algorithms}
+
+\subsection{asndjkasn}
+
+\part{CODING}
+
+\end{document}
