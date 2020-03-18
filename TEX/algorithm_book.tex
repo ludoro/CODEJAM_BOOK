@@ -2,9 +2,6 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-
-
-
 \usepackage{amsmath}
 \usepackage[usenames,svgnames,dvipsnames]{xcolor}
 \usepackage{epigraph}
@@ -50,7 +47,7 @@ frame=single
     break,continue,macro,quote,let,if,elseif,else,try,catch,end,bitstype,ccall,do,using,module,
     import,export,importall,baremodule,immutable,local,global,const,Bool,Int,Int8,Int16,Int32,
     Int64,Uint,Uint8,Uint16,Uint32,Uint64,Float32,Float64,Complex64,Complex128,Any,Nothing,None,
-    function,type,typealias,abstract
+    function,type,typealias,abstractx
   },
   sensitive=true,
   morecomment=[l]{\#},
@@ -86,8 +83,8 @@ frame=single
   
     \newtcbtheorem
   []% init options
-  {example}% name
-  {Example}% title
+  {problem}% name
+  {Problem}% title
   {%
     colback=Salmon!10,
     colframe=BrickRed,
@@ -174,20 +171,26 @@ LA MIA LIBRA
 Sto definendo cose
 \end{definition}
 
-\lstinputlisting[language=Julia]{/Users/ludovicobessi/Desktop/ALGORITHM_BOOK/CODE/prova.jl}
 
 \begin{theorem}{Mioteorema}
 najkdfna
 \end{theorem}
 
-\begin{example}{Example}
-ajdasdnla
-\end{example}
+
 
 \section{First algorithms}
 
 \subsection{asndjkasn}
 
-\part{CODING}
+\part{CODE JAM 2019}
+
+\section{Qualification round}
+
+\subsection{Foregone solution}
+\begin{problem}{}{}
+Suppose you have an integer $N$. Split N in two integers A and B such that $N = A + B$, in such a way that 4 is not contained nor in A nor in B. If there is not a 4 in the integer $N$, then A or B can be $0$. \\\\
+\textbf{Trick}: $N = N + 0$, remove unity from 4's in N and add them in the right place in the vector of 0's.
+\end{problem}
+\lstinputlisting[language=Julia]{/Users/ludovicobessi/Desktop/code_jam/CODE/2019/quali_round/Foregone_solution.jl}
 
 \end{document}
